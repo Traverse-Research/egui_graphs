@@ -7,7 +7,7 @@ use crate::{DisplayEdge, DisplayNode, Graph};
 const KEY_PREFIX: &str = "egui_graphs_layout";
 
 fn get_id(id: Option<String>) -> egui::Id {
-    egui::Id::new(format!("{KEY_PREFIX}_{}", id.unwrap_or_default()))
+    egui::Id::unique(format!("{KEY_PREFIX}_{}", id.unwrap_or_default()))
 }
 
 pub trait LayoutState: SerializableAny + Default + Debug {
